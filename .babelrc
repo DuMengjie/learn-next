@@ -1,0 +1,12 @@
+//.babelrc
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    // "transform-decorators-legacy",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }]
+  ]
+}
