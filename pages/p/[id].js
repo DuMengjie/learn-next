@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import fetch from 'isomorphic-unfetch';
+import { requestShowDetail } from '../../services/public';
 
 const Post = props => (
   <Layout>
@@ -11,8 +11,7 @@ const Post = props => (
 
 Post.getInitialProps = async function(context) {
   const { id } = context.query;
-  const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
-  const show = await res.json();
+  const show = await requestShowDetail(id);
 
   console.log(`Fetched show: ${show.name}`);
 
