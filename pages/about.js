@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { inject, observer } from 'mobx-react'
+import { inject, observer } from 'mobx-react';
 
 @inject('store')
 @observer
@@ -11,10 +11,10 @@ class About extends React.Component {
   render() {
     return (
       <Layout>
-      <p>This is the about page</p>
-    </Layout>
-    )
+        <p>This is the about page</p>
+      </Layout>
+    );
   }
 }
 
-export default About
+export default About;

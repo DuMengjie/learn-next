@@ -2,6 +2,7 @@
 dist
 .next
 .zip
+.vscode
 
 # dependencies
 node_modules
