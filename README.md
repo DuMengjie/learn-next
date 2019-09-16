@@ -8,7 +8,7 @@
        {props.children}
      </div>
    );
-   
+
    const Index = () => (
      <Layout>
        <p>Hello Next.js</p>
@@ -25,9 +25,9 @@
        </div>
      );
    };
-   
+
    const Page = () => <p>Hello Next.js</p>;
-   
+
    export default withLayout(Page);
    ```
 
@@ -38,15 +38,15 @@
        {props.content}
      </div>
    );
-   
+
    const indexPageContent = <p>Hello Next.js</p>;
-   
+
    export default function Index() {
      return <Layout content={indexPageContent} />;
    }
    ```
 
-   
+
 
 ### 路由
 
@@ -73,6 +73,25 @@ Link组件href属性渲染文件的路径，as属性表示地址栏显示的URL�
 `getInitialProps`中请求数据，成功后可在`props`中使用
 
 ```javascript
+// 在React组件中使用
+import React from 'react'
+
+export default class extends React.Component {
+  static async getInitialProps({ req }) {
+    const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
+    return { userAgent }
+  }
+
+  render() {
+    return (
+      <div>
+        Hello World {this.props.userAgent}
+      </div>
+    )
+  }
+}
+
+// 在stateless组件中使用
 Index.getInitialProps = async function(context) {
   const { id } = context.query;
   const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');

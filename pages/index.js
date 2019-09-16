@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import { requestShowList } from '../services/public';
+import '../styles/index.scss';
 
 const Index = (props => {
   return (
